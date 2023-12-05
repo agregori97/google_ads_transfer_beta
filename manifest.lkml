@@ -6,7 +6,7 @@ constant: CONNECTION_NAME {
 }
 
 constant: GOOGLE_ADS_SCHEMA {
-  value: "google-ads"
+  value: "google_ads"
   export: override_optional
 }
 

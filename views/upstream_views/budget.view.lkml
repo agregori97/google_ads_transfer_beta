@@ -44,12 +44,12 @@ dimension: prim_key {
 
   dimension: amount {
     type: number
-    sql: ${TABLE}.Amount / 1000000.0 ;;
+    sql: ${TABLE}.campaign_budget_amount_micros / 1000000.0 ;;
   }
 
   dimension: budget_id {
     type: number
-    sql: ${TABLE}.budget_id ;;
+    sql: ${TABLE}.campaign_budget_id;;
   }
 
   dimension: budget_name {

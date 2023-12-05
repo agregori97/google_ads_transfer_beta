@@ -99,7 +99,7 @@ view: campaign {
 
   dimension: budget_id {
     type: number
-    sql: ${TABLE}.budget_id ;;
+    sql: SAFE_CAST(${TABLE}.campaign_campaign_budget AS INT64);;
   }
 
   dimension: campaign_desktop_bid_modifier {
@@ -127,7 +127,7 @@ view: campaign {
     drill_fields: [ad_group.ad_group_name]
     alias: [name]
     type: string
-    sql: concat(${TABLE}.CampaignName, ' | ', ${campaign_id}) ;;
+    sql: concat(${TABLE}.campaign_name, ' | ', ${campaign_id}) ;;
     link: {
       label: "See {{value}} Detail Dashboard"
       url: "/dashboards/block_google_ads_transfer_v2::campaign_details_lookup?CampaignName={{ value }}&Period={{ fact.period._parameter_value | replace: \"'\", '' | url_encode }}"
@@ -162,7 +162,7 @@ view: campaign {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.end_date ;;
+    sql: ${TABLE}.campaign_end_date ;;
   }
 
   dimension: enhanced_cpc_enabled {
@@ -233,7 +233,7 @@ view: campaign {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.start_date ;;
+    sql: ${TABLE}.campaign_start_date ;;
   }
 
   dimension: total_amount {

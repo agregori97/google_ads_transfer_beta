@@ -110,7 +110,7 @@ view: keyword {
 
   dimension: cpm_bid_str {
     type: string
-    sql: ${TABLE}.cpm_bid_str ;;
+    sql: ${TABLE}.metrics_cpm_bid_str ;;
   }
 
   dimension: creative_quality_score {
@@ -121,7 +121,7 @@ view: keyword {
   dimension: criteria {
     description: "keyword name"
     type: string
-    sql: ${TABLE}.criteria ;;
+    sql: ${TABLE}.ad_group_criterion_keyword_text ;;
     link: {
       label: "Manage this keyword"
       url: "https://ads.google.com/aw/keywords?ocid={{ keyword.criterion_id._value}}"
@@ -136,22 +136,22 @@ view: keyword {
   dimension: criterion_id {
     hidden: yes
     type: number
-    sql: ${TABLE}.criterion_id ;;
+    sql: ${TABLE}.ad_group_criterion_criterion_id;;
   }
 
   dimension: enhanced_cpc_enabled {
     type: yesno
-    sql: ${TABLE}.enhanced_cpc_enabled ;;
+    sql: ${TABLE}.metrics_enhanced_cpc_enabled ;;
   }
 
   dimension: estimated_add_clicks_at_first_position_cpc {
     type: number
-    sql: ${TABLE}.estimated_add_clicks_at_first_position_cpc ;;
+    sql: ${TABLE}.metrics_estimated_add_clicks_at_first_position_cpc ;;
   }
 
   dimension: estimated_add_cost_at_first_position_cpc {
     type: number
-    sql: ${TABLE}.estimated_add_cost_at_first_position_cpc ;;
+    sql: ${TABLE}.metrics_estimated_add_cost_at_first_position_cpc ;;
   }
 
   dimension: external_customer_id {

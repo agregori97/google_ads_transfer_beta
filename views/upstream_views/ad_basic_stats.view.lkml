@@ -57,27 +57,27 @@ view: ad_basic_stats {
 
   dimension: active_view_impressions {
     type: number
-    sql: ${TABLE}.active_view_impressions ;;
+    sql: ${TABLE}.metrics_active_view_impressions ;;
   }
 
   dimension: active_view_measurability {
     type: number
-    sql: ${TABLE}.active_view_measurability ;;
+    sql: ${TABLE}.metrics_active_view_measurability ;;
   }
 
   dimension: active_view_measurable_cost {
     type: number
-    sql: ${TABLE}.active_view_measurable_cost ;;
+    sql: ${TABLE}.metrics_active_view_measurable_cost ;;
   }
 
   dimension: active_view_measurable_impressions {
     type: number
-    sql: ${TABLE}.active_view_measurable_impressions ;;
+    sql: ${TABLE}.metrics_active_view_measurable_impressions ;;
   }
 
   dimension: active_view_viewability {
     type: number
-    sql: ${TABLE}.active_view_viewability ;;
+    sql: ${TABLE}.metrics_active_view_viewability ;;
   }
 
   dimension: ad_group_id {
@@ -117,27 +117,27 @@ view: ad_basic_stats {
 
   dimension: clicks {
     type: number
-    sql: ${TABLE}.clicks ;;
+    sql: ${TABLE}.metrics_clicks ;;
   }
 
   dimension: conversion_value {
     type: number
-    sql: ${TABLE}.conversion_value ;;
+    sql: ${TABLE}.metrics_conversions_value ;;
   }
 
   dimension: conversions {
     type: number
-    sql: ${TABLE}.conversions ;;
+    sql: ${TABLE}.metrics_conversions ;;
   }
 
   dimension: cost {
     type: number
-    sql: ${TABLE}.Cost / 1000000.0 ;;
+    sql: ${TABLE}.metrics_cost_micros / 1000000.0 ;;
   }
 
   dimension: creative_id {
     type: number
-    sql: ${TABLE}.creative_id ;;
+    sql: ${TABLE}.ad_group_ad_ad_id;;
   }
 
   dimension: criterion_id {
@@ -165,7 +165,7 @@ view: ad_basic_stats {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}.date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension: device {
@@ -180,17 +180,17 @@ view: ad_basic_stats {
 
   dimension: impressions {
     type: number
-    sql: ${TABLE}.impressions ;;
+    sql: ${TABLE}.metrics_impressions ;;
   }
 
   dimension: interaction_types {
     type: string
-    sql: ${TABLE}.interaction_types ;;
+    sql: ${TABLE}.metrics_interaction_event_types ;;
   }
 
   dimension: interactions {
     type: number
-    sql: ${TABLE}.interactions ;;
+    sql: ${TABLE}.metrics_interactions ;;
   }
 
   dimension: is_negative {
@@ -205,6 +205,6 @@ view: ad_basic_stats {
 
   dimension: view_through_conversions {
     type: number
-    sql: ${TABLE}.view_through_conversions ;;
+    sql: ${TABLE}.metrics_view_through_conversions ;;
   }
 }

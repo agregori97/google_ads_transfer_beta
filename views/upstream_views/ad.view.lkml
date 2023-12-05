@@ -141,7 +141,7 @@ view: ad {
   dimension: creative_id {
     hidden: yes
     type: number
-    sql: ${TABLE}.creative_id ;;
+    sql: ${TABLE}.ad_group_ad_ad_id ;;
   }
 
   dimension: creative_tracking_url_template {

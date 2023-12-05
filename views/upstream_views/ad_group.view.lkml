@@ -1,5 +1,5 @@
 view: ad_group {
-  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.AdGroup_@{GOOGLE_ADS_CUSTOMER_ID}`    ;;
+  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.ads_AdGroup_@{GOOGLE_ADS_CUSTOMER_ID}`    ;;
 
 
   dimension_group: _data {
@@ -15,7 +15,7 @@ view: ad_group {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._data_date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension_group: _latest {
@@ -31,7 +31,7 @@ view: ad_group {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._latest_date ;;
+    sql: ${TABLE}._LATEST_DATE ;;
   }
 
   dimension: latest {

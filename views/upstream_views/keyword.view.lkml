@@ -1,6 +1,6 @@
 view: keyword {
 
-  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.Keyword_@{GOOGLE_ADS_CUSTOMER_ID}`    ;;
+  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.ads_Keyword_@{GOOGLE_ADS_CUSTOMER_ID}`    ;;
 
   dimension: primary_key {
     type: string
@@ -23,7 +23,7 @@ view: keyword {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._data_date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension_group: _latest {
@@ -39,7 +39,7 @@ view: keyword {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._latest_date ;;
+    sql: ${TABLE}._LATEST_DATE ;;
   }
 
   dimension: latest {

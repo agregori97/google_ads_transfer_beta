@@ -1,5 +1,5 @@
 view: ad {
-  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.Ad_@{GOOGLE_ADS_CUSTOMER_ID}` ;;
+  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.ads_Ad_@{GOOGLE_ADS_CUSTOMER_ID}` ;;
 
   dimension: primary_key {
     primary_key: yes
@@ -20,7 +20,7 @@ view: ad {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._data_date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension_group: _latest {
@@ -36,7 +36,7 @@ view: ad {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._latest_date ;;
+    sql: ${TABLE}._LATEST_DATE;;
   }
 
   dimension: latest {

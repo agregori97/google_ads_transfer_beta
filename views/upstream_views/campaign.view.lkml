@@ -1,7 +1,7 @@
 include: /views/shared_views/*
 
 view: campaign {
-  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.Campaign_@{GOOGLE_ADS_CUSTOMER_ID}` ;;
+  sql_table_name: `@{GOOGLE_ADS_SCHEMA}.ads_Campaign_@{GOOGLE_ADS_CUSTOMER_ID}` ;;
 
 
   dimension_group: _data {
@@ -17,7 +17,7 @@ view: campaign {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._data_date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension_group: _latest {
@@ -33,7 +33,7 @@ view: campaign {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._latest_date ;;
+    sql: ${TABLE}._LATEST_DATE;;
   }
 
   dimension: latest {

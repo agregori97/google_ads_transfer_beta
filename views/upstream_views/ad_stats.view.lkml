@@ -1,7 +1,7 @@
 include: /views/shared_views/*
 
 view: ad_stats {
-  sql_table_name: (select *,GENERATE_UUID() as primary_key from `@{GOOGLE_ADS_SCHEMA}.AdStats_@{GOOGLE_ADS_CUSTOMER_ID}` )   ;;
+  sql_table_name: (select *,GENERATE_UUID() as primary_key from `@{GOOGLE_ADS_SCHEMA}.ads_AdStats_@{GOOGLE_ADS_CUSTOMER_ID}` )   ;;
   extends: [ads_common,date_base,period_base]
 
   dimension: primary_key {
@@ -14,7 +14,7 @@ view: ad_stats {
   dimension: _date {
     hidden: yes
     type: date_raw
-    sql: ${TABLE}._data_date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension_group: _data {
@@ -30,7 +30,7 @@ view: ad_stats {
     ]
     convert_tz: no
     datatype: date
-    sql: ${TABLE}._data_date ;;
+    sql: ${TABLE}._DATA_DATE ;;
   }
 
   dimension_group: _latest {

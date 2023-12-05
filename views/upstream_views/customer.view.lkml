@@ -75,7 +75,7 @@ view: customer{
 
   dimension: external_customer_id {
     type: number
-    sql: ${TABLE}.external_customer_id ;;
+    sql: ${TABLE}.customer_id ;;
   }
 
   dimension: is_auto_tagging_enabled {

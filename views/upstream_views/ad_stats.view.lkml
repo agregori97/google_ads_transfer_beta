@@ -175,7 +175,7 @@ view: ad_stats {
 
   dimension: external_customer_id {
     type: number
-    sql: ${TABLE}.external_customer_id ;;
+    sql: ${TABLE}.customer_id ;;
   }
 
   dimension: impressions {

@@ -157,7 +157,7 @@ view: keyword {
   dimension: external_customer_id {
     hidden: yes
     type: number
-    sql: ${TABLE}.external_customer_id ;;
+    sql: ${TABLE}.customer_id ;;
   }
 
   dimension: final_app_urls {

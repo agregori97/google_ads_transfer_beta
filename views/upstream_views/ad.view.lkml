@@ -218,7 +218,7 @@ view: ad {
   dimension: external_customer_id {
     hidden: yes
     type: number
-    sql: ${TABLE}.external_customer_id ;;
+    sql: ${TABLE}.customer_id ;;
   }
 
   dimension: format_setting {

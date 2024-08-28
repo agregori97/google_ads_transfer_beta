@@ -1,7 +1,7 @@
 # project_name: "block-google-ads-transfer"
 
 constant: CONNECTION_NAME {
-  value: "agregori-test-conn"
+  value: "bq-looker-marketplace"
   export: override_optional
 }
 

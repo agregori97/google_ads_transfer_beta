@@ -32,6 +32,7 @@ explore: ad_basic_stats {
 
   join: ad {
     from: ad
+    type: full_outer
     view_label: "Ads"
     sql_on: ${fact.creative_id} = ${ad.creative_id} AND
       ${fact.ad_group_id} = ${ad.ad_group_id} AND
@@ -43,6 +44,7 @@ explore: ad_basic_stats {
 
   join: ad_group {
     fields: [ad_group.ad_group_name]
+    type: full_outer
     from: ad_group
     view_label: "Ad Groups"
     sql_on: ${fact.ad_group_id} = ${ad_group.ad_group_id} AND
@@ -54,6 +56,7 @@ explore: ad_basic_stats {
 
   join: keyword {
     fields: [keyword.criteria,keyword.criteria_destination_url]
+    type: full_outer
     from: keyword
     view_label: "Keyword"
     sql_on: ${fact.ad_group_id} = ${keyword.ad_group_id} AND
@@ -64,6 +67,7 @@ explore: ad_basic_stats {
   }
 
   join: customer {
+    type: full_outer
     view_label: "Customer"
     sql_on: ${fact.external_customer_id} = ${customer.external_customer_id} AND
       ${customer.latest} ;;
@@ -72,6 +76,7 @@ explore: ad_basic_stats {
 
   join: campaign {
     view_label: "Campaign"
+    type: full_outer
     sql_on: ${fact.campaign_id} = ${campaign.campaign_id} AND
       ${fact.external_customer_id} = ${campaign.external_customer_id} AND
       ${campaign.latest};;
@@ -79,6 +84,7 @@ explore: ad_basic_stats {
   }
   join: budget {
     view_label: "Budget"
+    type: full_outer
     sql_on: ${campaign.budget_id}=${budget.budget_id} AND  ${budget._data_date} = ${fact._data_date} ;;
     relationship: many_to_one
   }
